@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-4 text-center">
+      <img src="{% static 'images/nobody.jpg' %}" width="75%" />
+    </div>
+    <div class="col-8">
+      <!-- Title goes between these h2 tags -->
+      <h2>{{ about.title }}About Max</h2>
+      <!-- Content goes directly underneath this -->
+       <p>Max, a 24-year-old Irish native, was born in Dublin and raised in a small village in Wicklow, where he
+           developed a deep appreciation for the natural beauty and close-knit community of rural Ireland. After
+           completing his secondary education, Max pursued his passion for storytelling and visual arts by studying Film
+           Production. He spent the first three years honing his craft at Bray Institute of Further Education, followed
+           by his final year at Coláiste Dhúlaigh, where he earned his Bachelor's Degree in Film & TV Production.
+           Currently, Max is expanding his skill set by studying Full Stack Programming at Code Institute, with
+           ambitions to build a successful career in the programming industry, blending his creative background with
+           technical expertise.</p>
+      {{ about.content | safe }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-right">
+      <!-- Updated on field goes in here -->
+
+      <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+    </div>
+  </div>
+</div>
+{% endblock content %}
